@@ -1,0 +1,1 @@
+lis3dh.setAccelerationRange(G_RANGE.G_RANGE_4_G);

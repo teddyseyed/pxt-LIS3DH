@@ -1,17 +1,20 @@
 enum G_RANGE{
 
-    //% block="16g"
-    G_RANGE_16_G          = 0b11,   
+    //% block="2g"      
+    G_RANGE_2_G           = 0b00,
+    
+    //% block="4g"   
+    G_RANGE_4_G           = 0b01,    
 
     //% block="8g"
-    G_RANGE_8_G           = 0b10,
+    G_RANGE_8_G           = 0b10,    
 
-    //% block="4g"   
-    G_RANGE_4_G           = 0b01,
-
-    //% block="2g"      
-    G_RANGE_2_G           = 0b00 
+    //% block="16g"
+    G_RANGE_16_G          = 0b11   
+   
 }
+
+
 
 
 /**
@@ -23,7 +26,26 @@ enum G_RANGE{
 namespace lis3dh{
 
 
-
-
+/**
+    * Set the motor mode (ERM or LRA) of the DRV2605
+    */
+    //% block
+    //% group="Configuration"
+    export function setAccelerationRange(range: G_RANGE) {
+        switch (range) {
+            case G_RANGE.G_RANGE_2_G:
+            {
+            }
+            case G_RANGE.G_RANGE_4_G:
+            {
+            }
+            case G_RANGE.G_RANGE_8_G:
+            {
+            }
+            case G_RANGE.G_RANGE_16_G:
+            {
+            }                        
+        }
+    }
 
 }

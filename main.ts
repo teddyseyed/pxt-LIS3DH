@@ -12,3 +12,18 @@ enum G_RANGE{
     //% block="2g"      
     G_RANGE_2_G           = 0b00 
 }
+
+
+/**
+ * Driver for L1S3DH accelerometer, connected via I2C
+ * with NO interrupt pin connected
+ */
+//% color="#00852B" weight=90 icon="\uf0b2"
+//% groups='["Effects","Configuration"]'
+namespace lis3dh{
+
+
+
+
+
+}

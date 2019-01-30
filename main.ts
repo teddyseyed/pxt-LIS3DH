@@ -25,8 +25,15 @@ enum G_RANGE{
 //% groups='["Effects","Configuration"]'
 namespace lis3dh{
 
+    /* #region Register constants for the LIS3DH */
 
-/**
+    const LIS3DH_REG_WHOAMI = 0x0F
+
+
+
+    //* #endregion 
+
+    /**
     * Set the motor mode (ERM or LRA) of the DRV2605
     */
     //% block
@@ -48,4 +55,31 @@ namespace lis3dh{
         }
     }
 
+
+    function setupLIS3DH()
+    {
+        //First check if device exists or not
+        if (!deviceExists())
+        {
+            console.log("LIS3DH not found");
+            return;
+        }
+        else
+        {
+            console.log("LIS3DH found");
+        }
+          
+    }
+    
+    //Checks 15 times if the sensor is connected and exists
+    //otherwise returns false
+    function deviceExists()
+    {
+        let _deviceChecked = readRegister8(LIS3DH_REG_WHOAMI);
+
+        if (_deviceChecked != 0x33)
+            return false;
+        else   
+            return true;
+    }
 }

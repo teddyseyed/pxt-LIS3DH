@@ -28,7 +28,7 @@ namespace lis3dh{
     /* #region Register constants for the LIS3DH */
 
     const LIS3DH_REG_WHOAMI = 0x0F
-
+    const LIS3DH_ADDR = 0x18
 
 
     //* #endregion 
@@ -75,7 +75,7 @@ namespace lis3dh{
     //otherwise returns false
     function deviceExists()
     {
-        let _deviceChecked = readRegister8(LIS3DH_REG_WHOAMI);
+        let _deviceChecked = readRegister8(LIS3DH_ADDR,LIS3DH_REG_WHOAMI);
 
         if (_deviceChecked != 0x33)
             return false;

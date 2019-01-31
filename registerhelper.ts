@@ -17,9 +17,17 @@ function readRegister8(addr: number, reg: number): number {
 }
 
 /**
- * Read a 16-byte register of the address location
+ * Read a (UInt16) 16-byte register of the address location
  */
-function readRegister16(addr: number, reg: number): number {
+function readRegisterUInt16(addr: number, reg: number): number {
     pins.i2cWriteNumber(addr, reg, NumberFormat.UInt8BE);
     return pins.i2cReadNumber(addr, NumberFormat.UInt16LE);
+}
+
+/**
+ * Read a (Int16) 16-byte register of the address location
+ */
+function readRegisterInt16(addr: number, reg: number): number {
+    pins.i2cWriteNumber(addr, reg, NumberFormat.UInt8BE);
+    return pins.i2cReadNumber(addr, NumberFormat.Int16LE);
 }
